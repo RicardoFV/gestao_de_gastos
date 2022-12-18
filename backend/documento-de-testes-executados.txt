@@ -1,0 +1,11 @@
+Tipo
+ [x] Cadastrar um tipo com perfil usuario
+ [x] Cadastrar um tipo com perfi super
+ [x] Alterar tipo com usuario perfil usuario
+
+Usuario
+ [x] Listar usuario sem estar logado
+ [x] Listar usuarios acessando com perfil usuario
+ [x] Listar usuarios acessando com perfil super
+ [x] Cadastrar usuario vazio
+
