@@ -12,7 +12,9 @@ begin
 		('Usuário', 'App\Http\Controllers\Api\Admin\Usuario\UsuarioController@listar', 'Listar',NOW(), NOW()),
 		('SubTipo', 'App\Http\Controllers\Api\Admin\Tipo\SubTipoController@cadastrar', 'Cadastrar',NOW(), NOW()),
 		('SubTipo', 'App\Http\Controllers\Api\Admin\Tipo\SubTipoController@atualizar', 'Atualizar',NOW(), NOW()),
-		('SubTipo', 'App\Http\Controllers\Api\Admin\Tipo\SubTipoController@deletar', 'Deletar',NOW(), NOW());
+		('SubTipo', 'App\Http\Controllers\Api\Admin\Tipo\SubTipoController@deletar', 'Deletar',NOW(), NOW()),
+        ('carteira', 'App\Http\Controllers\Api\Admin\Carteira\CarteiraController@cadastrarCarteira', 'Cadastrar',NOW(), NOW()),
+        ('carteira', 'App\Http\Controllers\Api\Admin\Carteira\CarteiraController@atualizar', 'Atualizar',NOW(), NOW());
 
 end;
 
