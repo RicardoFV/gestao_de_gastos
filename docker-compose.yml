@@ -1,15 +1,20 @@
-version: '3.8'
+version: '3.5'
 
 #networks
 networks:
   api:
     driver: bridge
+# volumes
+volumes:
+  database:
+    driver: local
+
 # serviços
 services:
     # banco de dados
-    api_mysql:
+    api_mysql_gestao_gasto:
       image: mysql:5.7
-      container_name: api_mysql
+      container_name: api_mysql_gestao_gasto
       command: --innodb-use-native-aio=0
       volumes:
       - ./run/var:/var/lib/mysql
@@ -21,10 +26,10 @@ services:
       networks:
         - api
         
-    api_nginx:
+    api_nginx_gestao_gastos:
       # servidor
       image: nginx:alpine
-      container_name: api_nginx
+      container_name: api_nginx_gestao_gastos
       restart: unless-stopped
       tty: true
       working_dir: /application
@@ -34,15 +39,15 @@ services:
       ports:
         - "8181:80"
       links:
-        - api_mysql
+        - api_mysql_gestao_gasto
       networks:
         - api
     # php
-    api_php:
+    api_php_gestao_gastos:
       build: 
         context: .
         dockerfile: backend/Dockerfile
-      container_name: api_php
+      container_name: api_php_gestao_gastos
       restart: unless-stopped
       tty: true
       volumes:
@@ -52,5 +57,6 @@ services:
       networks:
         - api
       depends_on:
-      - api_mysql
+      - api_mysql_gestao_gasto
+
       
