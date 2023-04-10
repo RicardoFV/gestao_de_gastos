@@ -14,9 +14,8 @@
 
 <br>
 
-<picture>
-    <img alt="Modelo do banco de dados" width="800px" heigth="200px" src="https://user-images.githubusercontent.com/48629398/230804635-947d778d-2040-44b8-94e1-c11a04dd93ad.png"/>
-</picture>
+![modelo relacional v1](https://user-images.githubusercontent.com/48629398/230806806-18d0ce9b-5c39-4cc5-84a3-fde5972480f4.png)
+
 
 <br>
 
