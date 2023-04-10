@@ -15,7 +15,7 @@
 <br>
 
 <picture>
-    <img alt="Modelo do banco de dados" width="800px" heigth="200px" src="https://user-images.githubusercontent.com/48629398/230804635-947d778d-2040-44b8-94e1-c11a04dd93ad.png">
+    <img alt="Modelo do banco de dados" width="800px" heigth="200px" src="https://user-images.githubusercontent.com/48629398/230804635-947d778d-2040-44b8-94e1-c11a04dd93ad.png"/>
 </picture>
 
 <br>
