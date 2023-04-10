@@ -8,9 +8,12 @@ use App\Service\Persistencia;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Database\QueryException;
+use App\Http\Traits\CaminhoRota;
 
 class CarteiraController extends BaseController
 {
+    use CaminhoRota;
+
     public function __construct()
     {
         $this->validacaoCampos = $this->validarCampos();
@@ -43,6 +46,7 @@ class CarteiraController extends BaseController
                         'repeti' => $request->input('repeti'),
                         'valor' => $request->input('valor'),
                         'quantidade' => $i + 1, // recebe a quantidade somando + 1 para que no banco fique certo
+                         // preenchimento da data 2023-05-10 (yyyy-mm-dd)
                         'vencimento' => $this->montarData($i, $request->input('vencimento')),
                         'tipo_id' => $request->input('tipo_id'),
                         'subtipo_id' => $request->input('subtipo_id'),

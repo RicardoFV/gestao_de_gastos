@@ -13,10 +13,11 @@ use App\Service\Persistencia;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Database\QueryException;
+use App\Http\Traits\CaminhoRota;
 
 abstract class BaseController extends Controller implements IController
 {
-
+    use CaminhoRota;
     // responsavel por receber os campos que serão validados
     protected array $validacaoCampos;
     // cria um para pegar o atributo de persistencia que esta dentro de service
@@ -209,19 +210,5 @@ abstract class BaseController extends Controller implements IController
             );
         }
     }
-    // retorna 0 significa que pode acessar, 1 significa que não pode acessar
-    private function retornarPermissao(string $rota): int
-    {
-        // pega o id da rota cadastrada. (Em caso de não cadastrada sera retornado zero)
-        $this->rotaId = $this->persistencia->buscarRotaPorNome($rota);
-        // caso o id da rota seja maior que zero
-        if ($this->rotaId > 0) {
-            // verifica se a rota esta entre as não permitida para o usuario que esta acessando
-            $this->contarPermissao = $this->persistencia->consutarPermissao($this->rotaId, auth()->user()->perfil_id);
-            // retorna a contagem
-            return $this->contarPermissao;
-        }
-        // retorna a contagem
-        return $this->contarPermissao;
-    }
+
 }
