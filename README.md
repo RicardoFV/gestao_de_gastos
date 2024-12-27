@@ -4,9 +4,9 @@
 
 ## Desenvolvimento do Projeto
 
-- O Projeto foi criado usando o PHP 7.4, MySQL 5.4 e servidor NGING.
+- O Projeto foi criado usando o PHP 7.4, MySQL 5.4 e servidor nginx.
 
-- Para melhor facilitar o projeto tme a ulizição do Docker.
+- Projeto criado utilizando o Docker.
 
 ## Arquitetura Do projeto
 
